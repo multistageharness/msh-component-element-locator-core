@@ -1,0 +1,4 @@
+[submodule ".claude"]
+	path = .claude
+	url = git@github.com:multistageharness-com/git-submodule-folder.claude.git
+	branch = msh-component-element-locator-core
