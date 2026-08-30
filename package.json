@@ -1,0 +1,31 @@
+{
+  "name": "@msh/locator-core",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "description": "Locator generation: hash filtering, canonical anchoring, strategy and format registries, ranking and scoring. No React, no dependencies.",
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/multistageharness/msh-component-element-locator-core.git"
+  },
+  "engines": {
+    "node": ">=18"
+  },
+  "types": "./types/element.d.ts",
+  "exports": {
+    ".": {
+      "types": "./types/element.d.ts",
+      "default": "./src/index.js"
+    },
+    "./fixtures": "./fixtures/elements.js"
+  },
+  "files": [
+    "src",
+    "types",
+    "fixtures",
+    "README.md"
+  ],
+  "scripts": {
+    "test": "node --test"
+  }
+}
