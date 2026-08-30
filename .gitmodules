@@ -2,3 +2,7 @@
 	path = .claude
 	url = git@github.com:multistageharness-com/git-submodule-folder.claude.git
 	branch = msh-component-element-locator-core
+[submodule ".archives"]
+	path = .archives
+	url = git@github.com:multistageharness-com/git-submodule-folder.archives.git
+	branch = main
