@@ -33,9 +33,21 @@ need immutability stronger than a tag, put a commit SHA in the same position:
 git+ssh://git@github.com/multistageharness/msh-component-element-locator-core.git#<40-char-sha>
 ```
 
-Installing requires git read access to this repository, over whatever transport your environment
-authenticates with. A headless environment needs a deploy key or an SSH agent — a plain
-`npm ci` with no credentials cannot resolve the dependency.
+### What the install needs access to
+
+Installing requires git read access, over whatever transport your environment authenticates with.
+A headless environment needs a deploy key or an SSH agent — a plain `npm ci` with no credentials
+cannot resolve the dependency.
+
+> **npm clones submodules recursively, and this repo has three.** `.ai`, `.archives` and
+> `.claude` are agent and planning tooling — nothing under `src/` imports them — but npm fetches
+> them anyway when resolving a git dependency, and there is no flag to skip them. They live in a
+> **different organisation** (`multistageharness-com`) and are **private**, so an installing
+> environment needs read access to all three *as well as* to this repo, or the install fails with
+> a submodule clone error rather than an obvious permissions one.
+>
+> If you cannot get that access, use a packed tarball instead (`npm pack` at this repo root) —
+> the `files` allowlist means it contains only the package: 20 files, 88 KB, no submodules.
 
 ### Developing against a local checkout
 
